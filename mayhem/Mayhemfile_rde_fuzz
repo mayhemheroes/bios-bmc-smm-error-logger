@@ -1,0 +1,9 @@
+project: bios-bmc-smm-error-logger
+target: rde_fuzz
+cmds:
+  - cmd: /mayhem/rde_fuzz
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/rde_fuzz.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rde_fuzz/testsuite
